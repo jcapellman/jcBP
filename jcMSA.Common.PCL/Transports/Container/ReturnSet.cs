@@ -5,7 +5,7 @@ using jcMSA.Common.PCL.Transports.Common;
 
 namespace jcMSA.Common.PCL.Transports.Container {
     [DataContract]
-    public class ReturnSet<T> where T : BaseTransport {
+    public class ReturnSet<T> {
         [DataMember]
         public T ReturnValue { get; set; }
         

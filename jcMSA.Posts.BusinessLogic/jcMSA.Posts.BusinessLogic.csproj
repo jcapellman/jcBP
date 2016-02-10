@@ -30,7 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,7 +49,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Managers\PostListingManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\jcMSA.Common.PCL\jcMSA.Common.PCL.csproj">
+      <Project>{c2bd1b62-e924-4187-a4f3-2089ae74e5ae}</Project>
+      <Name>jcMSA.Common.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\jcMSA.Common.WebAPI\jcMSA.Common.WebAPI.csproj">
+      <Project>{2FCBAC01-CEA0-45A6-B800-84BC3359AFF9}</Project>
+      <Name>jcMSA.Common.WebAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\jcMSA.Posts.DataLayer\jcMSA.Posts.DataLayer.csproj">
+      <Project>{58aa09ca-1d42-46a2-8e00-44ce774cf35c}</Project>
+      <Name>jcMSA.Posts.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\jcMSA.Posts.PCL\jcMSA.Posts.PCL.csproj">
+      <Project>{77864923-2b45-4116-bc60-c65e271f07c2}</Project>
+      <Name>jcMSA.Posts.PCL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -145,6 +145,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\jcMSA.Common.PCL\jcMSA.Common.PCL.csproj">
+      <Project>{c2bd1b62-e924-4187-a4f3-2089ae74e5ae}</Project>
+      <Name>jcMSA.Common.PCL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\jcMSA.Common.WebAPI\jcMSA.Common.WebAPI.csproj">
       <Project>{2fcbac01-cea0-45a6-b800-84bc3359aff9}</Project>
       <Name>jcMSA.Common.WebAPI</Name>
