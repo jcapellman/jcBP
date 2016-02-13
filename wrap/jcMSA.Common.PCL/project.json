@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net45+win+MonoAndroid10+Xamarin.iOS10+MonoTouch10": {
+      "wrappedProject": "../../jcMSA.Common.PCL/jcMSA.Common.PCL.csproj",
+      "bin": {
+        "assembly": "../../jcMSA.Common.PCL/obj/{configuration}/jcMSA.Common.PCL.dll",
+        "pdb": "../../jcMSA.Common.PCL/obj/{configuration}/jcMSA.Common.PCL.pdb"
+      }
+    }
+  }
+}
