@@ -15,8 +15,9 @@
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\jcMMSA.Posts.DataLayer.PCL\jcMSA.Posts.DataLayer.PCL.csproj" />
     <ProjectReference Include="..\jcMSA.Common.PCL\jcMSA.Common.PCL.csproj" />
+    <ProjectReference Include="..\jcMSA.Posts.BusinessLogic\jcMSA.Posts.BusinessLogic.csproj" />
+    <ProjectReference Include="..\jcMSA.Posts.DataLayer\jcMSA.Posts.DataLayer.csproj" />
     <ProjectReference Include="..\jcMSA.Posts.PCL\jcMSA.Posts.PCL.csproj" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />

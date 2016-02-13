@@ -9,11 +9,7 @@
     "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
     "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
     "Microsoft.AspNet.StaticFiles": "1.0.0-rc1-final",
-    "Microsoft.Extensions.Configuration.FileProviderExtensions" : "1.0.0-rc1-final",
-    "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final",
-    "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
-    "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
-    "Microsoft.Extensions.Logging.Debug": "1.0.0-rc1-final"
+    "Microsoft.Extensions.Logging": "1.0.0-rc1-final"
   },
 
   "commands": {
@@ -24,6 +20,8 @@
     "dnx451": {
       "dependencies": {
         "jcMSA.Common.PCL": "1.0.0-*",
+        "jcMSA.Posts.BusinessLogic": "1.0.0-*",
+        "jcMSA.Posts.DataLayer": "1.0.0-*",
         "jcMSA.Posts.PCL": "1.0.0-*"
       }
     },

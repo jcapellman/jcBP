@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net451": {
+      "bin": {
+        "assembly": "../../packages/EntityFramework.6.1.3/lib/net45/EntityFramework.dll"
+      }
+    }
+  }
+}
