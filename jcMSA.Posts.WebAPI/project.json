@@ -23,14 +23,12 @@
   "frameworks": {
     "dnx451": {
       "dependencies": {
-        "jcMMSA.Posts.DataLayer.PCL": "1.0.0-*",
         "jcMSA.Common.PCL": "1.0.0-*",
         "jcMSA.Posts.PCL": "1.0.0-*"
       }
     },
     "dnxcore50": {
       "dependencies": {
-        "jcMMSA.Posts.DataLayer.PCL": "1.0.0-*",
         "jcMSA.Common.PCL": "1.0.0-*",
         "jcMSA.Posts.PCL": "1.0.0-*"
       }

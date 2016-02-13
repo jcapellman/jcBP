@@ -6,7 +6,7 @@ namespace jcMSA.Posts.DataLayer.Entities {
 
     public partial class EFModel : DbContext {
         public EFModel()
-            : base("name=EFModel") {
+            : base("name=EFModel1") {
         }
 
         public virtual DbSet<Post> Posts { get; set; }

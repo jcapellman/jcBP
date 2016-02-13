@@ -6,6 +6,9 @@
       "bin": {
         "assembly": "../../jcMSA.Common.PCL/obj/{configuration}/jcMSA.Common.PCL.dll",
         "pdb": "../../jcMSA.Common.PCL/obj/{configuration}/jcMSA.Common.PCL.pdb"
+      },
+      "dependencies": {
+        "Newtonsoft.Json": "8.0.2"
       }
     }
   }
