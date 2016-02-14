@@ -1,0 +1,30 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "jcMSA.Posts.BusinessLogic Class Library",
+  "authors": [ "Jarred" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "frameworks": {
+    "net451": {
+      "dependencies": {
+        "jcMSA.Common.PCL": "1.0.0-*",
+        "jcMSA.Posts.PCL": "1.0.0-*"
+      }
+    },
+    "dotnet5.4": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23516",
+        "System.Collections": "4.0.11-beta-23516",
+        "System.Linq": "4.0.1-beta-23516",
+        "System.Runtime": "4.0.21-beta-23516",
+        "System.Threading": "4.0.11-beta-23516"
+      }
+    }
+  },
+  "dependencies": {
+    "EntityFramework.Core": "7.0.0-rc1-final",
+    "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
+    "jcMSA.Posts.DataLayer": "1.0.0-*"
+  }
+}

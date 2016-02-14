@@ -17599,14 +17599,13 @@
       "Microsoft.AspNet.IISPlatformHandler >= 1.0.0-rc1-final",
       "Microsoft.AspNet.Mvc >= 6.0.0-rc1-final",
       "Microsoft.AspNet.Server.Kestrel >= 1.0.0-rc1-final",
-      "Microsoft.AspNet.StaticFiles >= 1.0.0-rc1-final",
-      "Microsoft.Extensions.Logging >= 1.0.0-rc1-final"
+      "Microsoft.AspNet.StaticFiles >= 1.0.0-rc1-final"
     ],
     "DNX,Version=v4.5.1": [
-      "jcMSA.Posts.BusinessLogic >= 1.0.0-*",
       "jcMSA.Common.PCL >= 1.0.0-*",
       "jcMSA.Posts.DataLayer >= 1.0.0-*",
-      "jcMSA.Posts.PCL >= 1.0.0-*"
+      "jcMSA.Posts.PCL >= 1.0.0-*",
+      "Microsoft.Extensions.Logging >= 1.0.0-rc1-final"
     ],
     "DNXCore,Version=v5.0": [
       "jcMSA.Common.PCL >= 1.0.0-*",

@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 
 using jcMSA.Common.PCL.Transports.Container;
-using jcMSA.Common.WebAPI;
 using jcMSA.Posts.DataLayer.Entities;
 using jcMSA.Posts.PCL.Transports;
+using Microsoft.Data.Entity;
 
 namespace jcMSA.Posts.BusinessLogic.Managers {
-    public class PostListingManager : BaseManager {
+    public class PostListingManager {
         public ReturnSet<List<PostListingResponseItem>> GetPostListing() {
             using (var eFactory = new EFModel()) {
-                var postListing = eFactory.Database.SqlQuery<PostListing>("POSTS_getPostListingSP");
+                var postListing = eFactory.Set<PostListing>().FromSql("POSTS_getPostListingSP").ToList();
 
                 if (postListing == null) {
                     throw new Exception("SP in getting posts returned null");
