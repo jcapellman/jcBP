@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using jcMSA.Common.PCL.Transports.Container;
-using jcMSA.Posts.PCL.Transports;
-using Microsoft.AspNet.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 
-namespace jcMSA.Posts.WebAPI.Controllers
-{
+using jcMSA.Common.PCL.Transports.Container;
+using jcMSA.Common.WebAPI;
+using jcMSA.Posts.BusinessLogic.Managers;
+using jcMSA.Posts.PCL.Transports;
+
+namespace jcMSA.Posts.WebAPI.Controllers {
     [Route("api/[controller]")]
-    public class PostsController : Controller
-    {
+    public class PostsController : BaseController {
         [HttpGet]
         public ReturnSet<List<PostListingResponseItem>> GET() {
-            return null;
+            return new PostListingManager().GetPostListing();
         }
     }
 }

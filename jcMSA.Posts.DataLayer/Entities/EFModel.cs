@@ -1,14 +1,12 @@
-using Microsoft.Data.Entity;
+using System.Data.Entity;
 
 namespace jcMSA.Posts.DataLayer.Entities {
-
-    public partial class EFModel : DbContext {
-        public EFModel() { }
+    public class EFModel : DbContext {
+        public EFModel() : base("EFModel") { }
 
         public virtual DbSet<Post> Posts { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
+        protected override void OnModelCreating(DbModelBuilder modelBuilder) {
             modelBuilder.Entity<Post>()
                 .Property(e => e.Title);
 

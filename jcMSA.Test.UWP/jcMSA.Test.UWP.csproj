@@ -137,10 +137,6 @@
       <Project>{c2bd1b62-e924-4187-a4f3-2089ae74e5ae}</Project>
       <Name>jcMSA.Common.PCL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\jcMSA.Posts.PCL\jcMSA.Posts.PCL.csproj">
-      <Project>{77864923-2b45-4116-bc60-c65e271f07c2}</Project>
-      <Name>jcMSA.Posts.PCL</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
