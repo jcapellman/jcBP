@@ -6,6 +6,9 @@ namespace jcMSA.BaseContent.PCL.Transports {
     [DataContract]
     public class TagCloudResponseItem : BaseResponse {
         [DataMember]
+        public string CSSClassName { get; set; }
+
+        [DataMember]
         public string DisplayName { get; set; }
 
         [DataMember]

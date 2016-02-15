@@ -6,9 +6,12 @@ namespace jcMSA.BaseContent.PCL.Transports {
     [DataContract]
     public class ArchiveResponseItem : BaseResponse {
         [DataMember]
-        public string DisplayText { get; set; }
+        public int PostCount { get; set; }
 
         [DataMember]
-        public string URL { get; set; }
+        public int Month { get; set; }
+
+        [DataMember]
+        public int Year { get; set; }
     }
 }

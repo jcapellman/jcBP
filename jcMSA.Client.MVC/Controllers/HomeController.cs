@@ -5,7 +5,7 @@ using jcMSA.Client.MVC.Helpers;
 using jcMSA.Posts.PCL.Transports;
 
 namespace jcMSA.Client.MVC.Controllers {
-    public class HomeController : Controller {
+    public class HomeController : BaseController {
         public ActionResult Index() {
             ViewBag.Title = RazorHelper.SITE_NAME;
 

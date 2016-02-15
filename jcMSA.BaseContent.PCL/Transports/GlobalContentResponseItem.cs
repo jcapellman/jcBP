@@ -13,6 +13,12 @@ namespace jcMSA.BaseContent.PCL.Transports {
         public List<LinkResponseItem> Links { get; set; }
 
         [DataMember]
-        public List<ArchiveResponseItem> ArchiveList { get; set; } 
+        public List<ArchiveResponseItem> ArchiveList { get; set; }
+
+        public GlobalContentResponseItem() {
+            TagCloud = new List<TagCloudResponseItem>();
+            Links = new List<LinkResponseItem>();
+            ArchiveList = new List<ArchiveResponseItem>();
+        } 
     }
 }
