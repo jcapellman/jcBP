@@ -1,0 +1,5 @@
+﻿@model List<jcMSA.Posts.PCL.Transports.PostListingResponseItem>
+
+@foreach (var post in Model) {
+    @Html.Partial("PartialPost", post)
+}

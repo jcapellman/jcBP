@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 using jcMSA.Common.PCL.Transports.Common;
@@ -14,5 +15,14 @@ namespace jcMSA.Posts.PCL.Transports {
 
         [DataMember]
         public string URL { get; set; }
+
+        [DataMember]
+        public int ID { get; set; }
+
+        [DataMember]
+        public string Body { get; set; }
+
+        [DataMember]
+        public List<TagResponseItem> Tags { get; set; } 
     }
 }

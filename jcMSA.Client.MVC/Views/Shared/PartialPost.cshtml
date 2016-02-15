@@ -1,0 +1,52 @@
+﻿@using jcMSA.Client.MVC.Helpers
+@model jcMSA.Posts.PCL.Transports.PostListingResponseItem
+
+<div class="post">
+    <div class="Date">
+        <h3>@Model.PostDate.ToLongDateString()</h3>
+    </div>
+
+    <div class="Content">
+        <div class="Title">
+            <h2>@Model.Title</h2>
+        </div>
+
+        <div class="CommentBar">
+            <div class="CommentLink">
+                @{
+                    object commentLink = @RazorHelper.URL + @Model.PostDate.Year + "/" + @Model.PostDate.Month + "/" + @Model.PostDate.Day + "/" + @Model.URL + "#disqus_thread";
+                    <h4><a href="@commentLink" data-disqus-identifier="@Model.ID">Comments</a></h4>
+                }
+            </div>
+        </div>
+
+        <div class="Body">@(new MvcHtmlString(@Model.Body))</div>
+
+        <div class="TagsBar">
+            <div class="Title">
+                Tags:
+            </div>
+
+            <div class="Tags">
+                @if (@Model.Tags != null && @Model.Tags.Count > 0) {
+                    foreach (var item in @Model.Tags) {
+                        var url = @RazorHelper.URL + "tag/" + @item.SafeName + "/";
+
+                        <div class="Item">
+                            <a href="@url">@item.Name</a>
+                        </div>
+                    }
+                } else {
+                    <div class="Item">
+                        No Tags were attached to this Post
+                    </div>
+                }
+            </div>
+        </div>
+
+        @*@if (@ViewBag.SinglePost) {
+            @Html.Partial("AddCommentForm", new bbxp5.mvc.Models.AddCommentModel(@Model.ID))
+        }*@
+    </div>
+</div>
+<br />

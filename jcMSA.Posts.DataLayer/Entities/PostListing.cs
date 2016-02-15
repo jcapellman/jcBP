@@ -7,6 +7,10 @@ namespace jcMSA.Posts.DataLayer.Entities {
 
         public string Title { get; set; }
 
+        public string Body { get; set; }
+
         public string SafeURL { get; set; }
+
+        public int ID { get; set; }
     }
 }

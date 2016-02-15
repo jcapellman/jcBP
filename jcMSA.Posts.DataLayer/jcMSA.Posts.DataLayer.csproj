@@ -52,6 +52,7 @@
     <Compile Include="Entities\EFModel.cs" />
     <Compile Include="Entities\Post.cs" />
     <Compile Include="Entities\PostListing.cs" />
+    <Compile Include="Entities\Tags.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
