@@ -7,9 +7,8 @@ namespace jcMSA.Client.MVC {
                         "~/Scripts/skel.min.js").Include("~/Scripts/skel-panels.min.js").Include("~/Scripts/init.js"));
             
             bundles.Add(new StyleBundle("~/Content/css").Include(
-            "~/Content/skel-noscript.css",
-            "~/Content/style.css",
-            "~/Content/style-desktop.css"));
+            "~/Content/bootstrap.min.css",
+            "~/Content/Site.css"));
         }
     }
 }

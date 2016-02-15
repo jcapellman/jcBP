@@ -14,7 +14,7 @@
         <div class="CommentBar">
             <div class="CommentLink">
                 @{
-                    object commentLink = @RazorHelper.URL + @Model.PostDate.Year + "/" + @Model.PostDate.Month + "/" + @Model.PostDate.Day + "/" + @Model.URL + "#disqus_thread";
+                    object commentLink = @RazorHelper.SITE_URL + @Model.PostDate.Year + "/" + @Model.PostDate.Month + "/" + @Model.PostDate.Day + "/" + @Model.URL + "#disqus_thread";
                     <h4><a href="@commentLink" data-disqus-identifier="@Model.ID">Comments</a></h4>
                 }
             </div>
@@ -30,7 +30,7 @@
             <div class="Tags">
                 @if (@Model.Tags != null && @Model.Tags.Count > 0) {
                     foreach (var item in @Model.Tags) {
-                        var url = @RazorHelper.URL + "tag/" + @item.SafeName + "/";
+                        var url = @RazorHelper.SITE_URL + "tag/" + @item.SafeName + "/";
 
                         <div class="Item">
                             <a href="@url">@item.Name</a>
