@@ -27,6 +27,8 @@ namespace jcMSA.Client.MVC.Controllers {
 
         public BaseController() {
             LoadData();
+
+            ViewBag.Title = SiteConfig.SITE_NAME;
         }
 
         private async void LoadData() {
