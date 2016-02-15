@@ -5,10 +5,12 @@ using System.Web.Mvc;
 
 using jcMSA.BaseContent.PCL.Handlers;
 using jcMSA.BaseContent.PCL.Transports;
+using jcMSA.Client.MVC.Enums;
 using jcMSA.Client.MVC.Helpers;
+using jcMSA.Client.MVC.Managers;
 
 namespace jcMSA.Client.MVC.Controllers {
-    public class BaseController : Controller {
+    public class BaseController : Controller {        
         private List<TagCloudResponseItem> processTagCloud(List<TagCloudResponseItem> tagItems) {
             var startingLevel = 10;
 
@@ -28,13 +30,21 @@ namespace jcMSA.Client.MVC.Controllers {
         }
 
         private async void LoadData() {
-            var gcHandler = new GlobalContentHandler(RazorHelper.BASECONTENT_WEBAPI);
+            if (CacheManager.CheckIfExists(CacheItems.GLOBALCONTENT_DATA)) {
+                ViewBag.GlobalContent = CacheManager.Get<GlobalContentResponseItem>(CacheItems.GLOBALCONTENT_DATA).ReturnValue;
+            }
+
+            var gcHandler = new GlobalContentHandler(SiteConfig.BASECONTENT_WEBAPI);
 
             var result = await gcHandler.GetGlobalContent();
 
             if (!result.HasValue) {
                 throw new Exception(result.Exception);
             }
+
+            CacheManager.Add(CacheItems.GLOBALCONTENT_DATA, result.ReturnValue);
+
+            result.ReturnValue.TagCloud = processTagCloud(result.ReturnValue.TagCloud);
 
             ViewBag.GlobalContent = result.ReturnValue;
         }

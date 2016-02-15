@@ -18,7 +18,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                @Html.ActionLink(@RazorHelper.SITE_NAME, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink(SiteConfig.SITE_NAME, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
 
             @Html.Partial("_LayoutMenu")
@@ -49,7 +49,7 @@
 
                     <div style="padding: 0 5px 5px 5px;">
                         @foreach (var item in @ViewBag.GlobalContent.ArchiveList) {
-                            var baseURL = @RazorHelper.SITE_URL + @item.Year + "/" + @item.Month + "/";
+                            var baseURL = @SiteConfig.SITE_URL + @item.Year + "/" + @item.Month + "/";
 
                             <div class="ArchiveItem">
                                 <a href="@baseURL">@item.Month @item.Year (@item.PostCount)</a>
@@ -62,7 +62,7 @@
                     <h3 style="margin-left: 5px">Tags</h3>
                     <div class="Tags" style="padding: 0 5px 5px 5px;">
                         @foreach (var tag in @ViewBag.GlobalContent.TagCloud) {
-                            var url = @RazorHelper.SITE_URL + "tag/" + @tag.SafeName + "/";
+                            var url = @SiteConfig.SITE_URL + "tag/" + @tag.SafeName + "/";
 
                             <a href="@url" class="@tag.CSSClassName">@tag.DisplayName</a>
                         }
@@ -72,7 +72,7 @@
 
             <div style="clear:both;"></div>
             <footer>
-                <p>@RazorHelper.SITE_FOOTER</p>
+                <p>@SiteConfig.SITE_FOOTER</p>
             </footer>
         </div>
     </div>

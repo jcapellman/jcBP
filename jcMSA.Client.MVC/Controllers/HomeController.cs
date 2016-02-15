@@ -7,7 +7,7 @@ using jcMSA.Posts.PCL.Transports;
 namespace jcMSA.Client.MVC.Controllers {
     public class HomeController : BaseController {
         public ActionResult Index() {
-            ViewBag.Title = RazorHelper.SITE_NAME;
+            ViewBag.Title = SiteConfig.SITE_NAME;
 
             var model = new List<PostListingResponseItem>();
             

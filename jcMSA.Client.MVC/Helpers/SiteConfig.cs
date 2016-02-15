@@ -1,7 +1,7 @@
 ﻿using System.Configuration;
 
 namespace jcMSA.Client.MVC.Helpers {
-    public static class RazorHelper {
+    public static class SiteConfig {
         public static string SITE_URL => ConfigurationManager.AppSettings["SITE_URL"];
 
         public static string SITE_NAME => ConfigurationManager.AppSettings["SITE_NAME"];
