@@ -38,6 +38,7 @@
     <Folder Include="Enums\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transports\Common\BaseRequest.cs" />
     <Compile Include="Transports\Common\BaseResponse.cs" />
