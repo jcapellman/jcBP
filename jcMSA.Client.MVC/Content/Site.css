@@ -1,0 +1,142 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+footer {
+    text-align: center;
+    font-size: 8px;
+    margin-top: 10px;
+}
+
+.LeftBar {
+        float: left; width: 80%;
+}
+
+.SideBar {
+    float: right;
+    width: 15%;
+    margin-top: 20px;
+    margin-left: 5%;
+}
+
+.SideBar .block, .SideBar .TagsBar {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+@media all and (max-width:1280px)  {
+    .LeftBar {
+        width: 100%;
+    }
+
+    .SideBar {
+        display: none;
+    }
+}
+
+
+.TagsBar .Tags {
+    
+}
+
+.TagsBar .Title {
+    margin: 0px;
+}
+
+.TagsBar .Tags .Item {
+    float: left;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #FFF;
+    border-color: #000;
+    border-style: solid;
+    border-width: .5px;
+    padding: 5px;
+    margin: 2px;
+}
+
+.TagsBar .Tags .Item:hover a, .TagsBar .Tags .Item a:active {
+    background-color: #0073ba;
+    color: #FFF;
+}
+
+.TagsBar .Tags .Item:hover {
+    background-color: #0073ba;
+    color: #FFF;
+}
+
+.navbar-inverse {
+    background-color: #1e1e1e;
+}
+
+.tagCloud {
+    display: none;
+}
+
+.TagItem1 {
+    font-size: 1em;
+}
+
+.TagItem2 {
+    font-size: 1em;
+}
+
+.TagItem3 {
+    font-size: 1em;
+}
+
+.TagItem4 {
+    font-size: 2em;
+}
+
+.TagItem5 {
+    font-size: 2em;
+}
+
+.TagItem6 {
+    font-size: 2em;
+}
+
+.TagItem7 {
+    font-size: 2em;
+}
+
+.TagItem8 {
+    font-size: 3em;
+}
+
+.TagItem9 {
+    font-size: 3em;
+}
+
+.TagItem10 {
+    font-size: 3em;
+}
+
+.img-responsive {  
+  display: block;  
+  height: auto;  
+  max-width: 100%;  
+} 
