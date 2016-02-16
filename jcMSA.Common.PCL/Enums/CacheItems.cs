@@ -1,4 +1,4 @@
-﻿namespace jcMSA.Client.MVC.Enums {
+﻿namespace jcMSA.Common.PCL.Enums {
     public enum CacheItems {
         GLOBALCONTENT_DATA,
         POSTS_MAINLISTING
