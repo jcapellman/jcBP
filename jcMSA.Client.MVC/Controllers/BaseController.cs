@@ -8,7 +8,9 @@ using jcMSA.Client.MVC.Helpers;
 using jcMSA.Client.MVC.PlatformImplementations;
 
 namespace jcMSA.Client.MVC.Controllers {
-    public class BaseController : Controller {        
+    public class BaseController : Controller {
+        protected WebCachePI _webCache;
+               
         private List<TagCloudResponseItem> processTagCloud(List<TagCloudResponseItem> tagItems) {
             var startingLevel = 10;
 
@@ -24,13 +26,15 @@ namespace jcMSA.Client.MVC.Controllers {
         }
 
         public BaseController() {
+            _webCache = new WebCachePI();
+
             LoadData();
 
             ViewBag.Title = SiteConfig.SITE_NAME;
         }
 
         private async void LoadData() {
-            var gcHandler = new GlobalContentHandler(SiteConfig.BASECONTENT_WEBAPI, new WebCachePI());
+            var gcHandler = new GlobalContentHandler(SiteConfig.BASECONTENT_WEBAPI, _webCache);
 
             var result = await gcHandler.GetGlobalContent();
 
