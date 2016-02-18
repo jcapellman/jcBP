@@ -8,8 +8,8 @@ namespace jcMSA.Client.MVC.Helpers {
 
         public static string SITE_FOOTER => ConfigurationManager.AppSettings["SITE_FOOTER"];
 
-        public static string BASECONTENT_WEBAPI => ConfigurationManager.AppSettings["BASECONTENT_WEBAPI"];
+        public static string BASECONTENT_WEBAPI_ADDRESS => ConfigurationManager.AppSettings["BASECONTENT_WEBAPI_ADDRESS"];
 
-        public static string POSTS_WEBAPI => ConfigurationManager.AppSettings["POSTS_WEBAPI"];
+        public static string POSTS_WEBAPI_ADDRESS => ConfigurationManager.AppSettings["POSTS_WEBAPI_ADDRESS"];
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -80,12 +81,7 @@ namespace jcMSA.Common.PCL {
 
                 return result;
             } catch (Exception ex) {
-                dynamic result = default(T);
-
-                result.ErrorCode = ErrorCodes.HTTP_CLIENT_FAILED_TO_CONNECT;
-                result.Exception = ex.ToString();
-
-                return result;
+                return (T)Activator.CreateInstance(typeof (T), ex, ErrorCodes.HTTP_CLIENT_FAILED_TO_CONNECT);                             
             }
         }
     }

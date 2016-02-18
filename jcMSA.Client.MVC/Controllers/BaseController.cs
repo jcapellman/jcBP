@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -34,9 +35,13 @@ namespace jcMSA.Client.MVC.Controllers {
         }
 
         private async void LoadData() {
-            var gcHandler = new GlobalContentHandler(SiteConfig.BASECONTENT_WEBAPI, _webCache);
+            var gcHandler = new GlobalContentHandler(SiteConfig.BASECONTENT_WEBAPI_ADDRESS, _webCache);
 
             var result = await gcHandler.GetGlobalContent();
+
+            if (result.HasError) {
+                throw new Exception(result.Exception);
+            }
 
             result.ReturnValue.TagCloud = processTagCloud(result.ReturnValue.TagCloud);
 

@@ -11,6 +11,8 @@ namespace jcMSA.Common.PCL.Transports.Container {
         
         public bool HasValue => ReturnValue != null;
 
+        public bool HasError => Exception != "" || ErrorCode != ErrorCodes.NONE;
+
         [DataMember]
         public string Exception { get; set; }
 
