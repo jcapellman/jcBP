@@ -5,7 +5,7 @@ using jcMSA.Common.WebAPI;
 namespace jcMSA.BaseContent.WebAPI.Controllers {
     public class ContentController : BaseController {
         public ReturnSet<GlobalContentResponseItem> GET() {
-            return new ReturnSet<GlobalContentResponseItem>(null);
+            return new ReturnSet<GlobalContentResponseItem>(new GlobalContentResponseItem());
         }
     }
 }

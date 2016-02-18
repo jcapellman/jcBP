@@ -2,8 +2,10 @@
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+
 using jcMSA.Common.PCL.Enums;
 using jcMSA.Common.PCL.PlatformAbstractions;
+
 using Newtonsoft.Json;
 
 namespace jcMSA.Common.PCL {
@@ -69,13 +71,22 @@ namespace jcMSA.Common.PCL {
                 return _cacheInterface.Get<T>(cacheItem).ReturnValue;
             }
 
-            var str = await HC.GetStringAsync($"{BASEURL}{parseUrlArguments(urlArguments)}");
+            try {
+                var str = await HC.GetStringAsync($"{BASEURL}{parseUrlArguments(urlArguments)}");
+                
+                var result = JsonConvert.DeserializeObject<T>(str);
 
-            var result = JsonConvert.DeserializeObject<T>(str);
+                _cacheInterface.Add(cacheItem, result);
 
-            _cacheInterface.Add(cacheItem, result);
+                return result;
+            } catch (Exception ex) {
+                dynamic result = default(T);
 
-            return result;
+                result.ErrorCode = ErrorCodes.HTTP_CLIENT_FAILED_TO_CONNECT;
+                result.Exception = ex.ToString();
+
+                return result;
+            }
         }
     }
 }

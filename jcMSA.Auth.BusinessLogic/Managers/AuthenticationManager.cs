@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 
 using jcMSA.Auth.DataLayer.Entities;
 using jcMSA.Auth.PCL.Transports;
+using jcMSA.Common.PCL.Enums;
 using jcMSA.Common.PCL.Transports.Container;
 using jcMSA.Common.WebAPI;
 
@@ -15,10 +16,10 @@ namespace jcMSA.Auth.BusinessLogic.Managers {
                         a => a.Username == requestItem.Username && a.Password == requestItem.Password);
 
                 if (!result) {
-                    return new ReturnSet<AuthenticationResponseItem>(null, "Invalid Username or Password");
+                    return new ReturnSet<AuthenticationResponseItem>(ErrorCodes.AUTH_FAILED_USERNAME_OR_PASSWORD);
                 }
 
-                return new ReturnSet<AuthenticationResponseItem>(null);
+                return new ReturnSet<AuthenticationResponseItem>(new AuthenticationResponseItem());
             }
         }
     }

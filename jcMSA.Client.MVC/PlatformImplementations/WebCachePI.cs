@@ -9,7 +9,7 @@ using jcMSA.Common.PCL.Transports.Container;
 namespace jcMSA.Client.MVC.PlatformImplementations {
     public class WebCachePI : IBaseCachePa {
         public ReturnSet<T> Get<T>(CacheItems cacheItem) {
-            return !Exists(cacheItem) ? new ReturnSet<T>(default(T), "No key exists in cache") : new ReturnSet<T>((T)HttpContext.Current.Cache[cacheItem.ToString()]);
+            return !Exists(cacheItem) ? new ReturnSet<T>(ErrorCodes.CACHE_KEY_NOT_FOUND) : new ReturnSet<T>((T)HttpContext.Current.Cache[cacheItem.ToString()]);
         }
 
         public void Add<T>(CacheItems cacheItem, T value) {

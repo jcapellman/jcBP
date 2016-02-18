@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="BaseHandler.cs" />
     <Compile Include="Enums\CacheItems.cs" />
+    <Compile Include="Enums\ErrorCodes.cs" />
     <Compile Include="PlatformAbstractions\IBaseCachePa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transports\Common\BaseRequest.cs" />
