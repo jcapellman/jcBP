@@ -9,6 +9,7 @@ using jcMSA.Client.MVC.Helpers;
 using jcMSA.Client.MVC.PlatformImplementations;
 
 namespace jcMSA.Client.MVC.Controllers {
+    [HandleError]
     public class BaseController : Controller {
         protected WebCachePI _webCache;
                
@@ -32,6 +33,10 @@ namespace jcMSA.Client.MVC.Controllers {
             LoadData();
 
             ViewBag.Title = SiteConfig.SITE_NAME;
+        }
+
+        public ActionResult HandleErrorInfo(Exception exception, string controllerName, string actionName) {
+            return View("Error", new HandleErrorInfo(exception, controllerName, actionName));
         }
 
         private async void LoadData() {
