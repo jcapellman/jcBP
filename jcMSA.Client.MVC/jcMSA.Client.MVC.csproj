@@ -122,11 +122,13 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="CustomFilters\CustomErrorAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Encryption.cs" />
     <Compile Include="Helpers\SiteConfig.cs" />
+    <Compile Include="jcBPWebException.cs" />
     <Compile Include="PlatformImplementations\WebCachePI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -183,6 +185,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_LayoutMenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LayoutBlank.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

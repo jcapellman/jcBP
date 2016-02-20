@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
 using jcMSA.BaseContent.PCL.Handlers;
 using jcMSA.BaseContent.PCL.Transports;
+using jcMSA.Client.MVC.CustomFilters;
 using jcMSA.Client.MVC.Helpers;
 using jcMSA.Client.MVC.PlatformImplementations;
 
 namespace jcMSA.Client.MVC.Controllers {
-    [HandleError]
+    [CustomError]
     public class BaseController : Controller {
         protected WebCachePI _webCache;
                
@@ -35,17 +35,13 @@ namespace jcMSA.Client.MVC.Controllers {
             ViewBag.Title = SiteConfig.SITE_NAME;
         }
 
-        public ActionResult HandleErrorInfo(Exception exception, string controllerName, string actionName) {
-            return View("Error", new HandleErrorInfo(exception, controllerName, actionName));
-        }
-
         private async void LoadData() {
             var gcHandler = new GlobalContentHandler(SiteConfig.BASECONTENT_WEBAPI_ADDRESS, _webCache);
 
             var result = await gcHandler.GetGlobalContent();
 
-            if (result.HasError) {
-                throw new Exception(result.Exception);
+            if (result.HasError) {           
+                return;
             }
 
             result.ReturnValue.TagCloud = processTagCloud(result.ReturnValue.TagCloud);

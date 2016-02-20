@@ -1,8 +1,9 @@
-﻿using System;
-using System.Web;
+﻿using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+
+using jcMSA.Client.MVC.Controllers;
 
 namespace jcMSA.Client.MVC {
     public class MvcApplication : System.Web.HttpApplication {
@@ -13,13 +14,20 @@ namespace jcMSA.Client.MVC {
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
 
-        protected void Application_Error(object sender, EventArgs e) {
-            var exception = Server.GetLastError();
+        protected void Application_EndRequest() {
+            if (Context.Response.StatusCode != 404) {
+                return;
+            }
+
             Response.Clear();
-            
-            Server.ClearError();
-                
-            Response.Redirect($"~/Error/{HttpServerUtility.UrlTokenEncode(Helpers.Encryption.Encrypt(exception.ToString()))}", true);
+
+            var routeData = new RouteData();
+            routeData.Values["controller"] = "Error";
+            routeData.Values["action"] = "NotFound";
+
+            IController errorController = new ErrorController();
+            errorController.Execute(new RequestContext(new HttpContextWrapper(Context), routeData));
         }
+
     }
 }

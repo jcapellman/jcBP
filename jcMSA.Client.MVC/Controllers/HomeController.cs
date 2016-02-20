@@ -1,11 +1,12 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web.Mvc;
 
+using jcMSA.Client.MVC.CustomFilters;
 using jcMSA.Client.MVC.Helpers;
 using jcMSA.Posts.PCL.Handlers;
 
 namespace jcMSA.Client.MVC.Controllers {
+    [CustomError]
     public class HomeController : BaseController {
         public async Task<ActionResult> Index() {
             var postHandler = new PostsHandler(SiteConfig.POSTS_WEBAPI_ADDRESS, _webCache);
@@ -13,7 +14,7 @@ namespace jcMSA.Client.MVC.Controllers {
             var result = await postHandler.GetMainListing();
 
             if (!result.HasValue) {
-                throw new Exception(result.Exception);
+                throw new jcBPWebException(result.Exception, result.ErrorCode);
             }
             
             return View(result.ReturnValue);
