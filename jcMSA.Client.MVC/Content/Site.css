@@ -23,6 +23,22 @@ textarea {
     max-width: 280px;
 }
 
+
+.actionButton {
+    background: #aa33FF;
+    color: #FFF;
+    font-weight: bold;
+    border: 0;
+    text-transform: uppercase;    
+    padding: 5px 10px 5px 10px;    
+}
+
+.actionButton:hover {
+    background: #FFF;
+    color: #aa33FF;
+    border: 1px #aa33FF solid;
+}
+
 footer {
     text-align: center;
     font-size: 8px;
@@ -31,6 +47,10 @@ footer {
 
 .LeftBar {
         float: left; width: 80%;
+}
+
+#ErrorContainer {
+    color: #4e4e4e;    
 }
 
 .SideBar {

@@ -4,7 +4,7 @@ namespace jcMSA.Client.MVC {
     public class BundleConfig {
         public static void RegisterBundles(BundleCollection bundles) {
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
-                        "~/Scripts/skel.min.js").Include("~/Scripts/skel-panels.min.js").Include("~/Scripts/init.js"));
+                        "~/Scripts/jquery-2.1.3.min.js").Include("~/Scripts/bootstrap.min.js"));
             
             bundles.Add(new StyleBundle("~/Content/css").Include(
             "~/Content/bootstrap.min.css",

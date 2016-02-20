@@ -4,5 +4,27 @@
 
 <div>
     <h1>Sorry about that...</h1>
-    An error occurred while processing your request (@ViewBag.Exception).
+    <h3>An error occurred, but don't fret the error has been logged and reported.</h3>
+    <button class="actionButton" id="showHideErrorDetail">Show Error Detail</button>
+    
+    <div id="ErrorContainer">        
+        <h3>Error Details:</h3>
+        @ViewBag.Exception
+    </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('#showHideErrorDetail').click(function () {
+            if ($('#showHideErrorDetail').text() == 'Show Error Detail') {
+                $('#ErrorContainer').show();
+                $('#showHideErrorDetail').text('Hide Error Detail');
+            } else {
+                $('#ErrorContainer').hide();
+                $('#showHideErrorDetail').text('Show Error Detail');
+            }
+        });
+
+        $('#ErrorContainer').hide();
+    });
+</script>
