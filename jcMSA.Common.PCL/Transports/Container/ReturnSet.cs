@@ -19,6 +19,11 @@ namespace jcMSA.Common.PCL.Transports.Container {
         [DataMember]
         public ErrorCodes ErrorCode { get; set; }
 
+        public ReturnSet() {
+            Exception = string.Empty;
+            ErrorCode = ErrorCodes.NONE;
+        } 
+
         public ReturnSet(T value) : this(value, string.Empty, ErrorCodes.NONE) { }
 
         public ReturnSet(T value, Exception exception, ErrorCodes errorCode) : this(value, exception.ToString(), errorCode) { }

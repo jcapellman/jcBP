@@ -2,6 +2,7 @@
 
 namespace jcMSA.Posts.DataLayer.Entities {
     public class PostListing {
+        public int ID { get; set; }
 
         public DateTimeOffset Created { get; set; }
 

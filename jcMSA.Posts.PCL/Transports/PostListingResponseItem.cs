@@ -7,6 +7,9 @@ namespace jcMSA.Posts.PCL.Transports {
     [DataContract]
     public class PostListingResponseItem : BaseResponse {
         [DataMember]
+        public int ID { get; set; }
+
+        [DataMember]
         public string Title { get; set; }
 
         [DataMember]

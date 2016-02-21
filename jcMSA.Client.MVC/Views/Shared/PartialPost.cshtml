@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <div class="Body">@(new MvcHtmlString(@Model.Body))</div>
+        <div class="Body">@(new MvcHtmlString(@Model.Summary))</div>
 
         <div class="TagsBar">
             <div class="Title">
@@ -28,7 +28,7 @@
             </div>
 
             <div class="Tags">
-                @if (@Model.Tags != null && @Model.Tags.Count > 0) {
+                @*@if (@Model.Tags != null && @Model.Tags.Count > 0) {
                     foreach (var item in @Model.Tags) {
                         var url = @SiteConfig.SITE_URL + "tag/" + @item.SafeName + "/";
 
@@ -40,7 +40,7 @@
                     <div class="Item">
                         No Tags were attached to this Post
                     </div>
-                }
+                }*@
             </div>
         </div>
 

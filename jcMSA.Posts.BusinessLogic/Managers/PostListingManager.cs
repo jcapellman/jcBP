@@ -17,6 +17,7 @@ namespace jcMSA.Posts.BusinessLogic.Managers {
                 }
 
                 return new ReturnSet<List<PostListingResponseItem>>(postListing.Select(a => new PostListingResponseItem {
+                    ID = a.ID,
                     PostDate = a.PostDate,
                     Title = a.Title,
                     URL = a.URL,
