@@ -15,6 +15,9 @@ namespace jcMSA.Posts.WebAPI.Controllers {
         }
 
         [HttpGet]
-        public ReturnSet<PostResponseItem> GET(int id) => new PostManager().GetPost(id); 
+        public ReturnSet<PostResponseItem> GET(int id) => new PostManager().GetPost(id);
+
+        [HttpGet]
+        public ReturnSet<PostResponseItem> GET(int year, int month, int day, string posturl) => new PostManager().GetPost(year, month, day, posturl);
     }
 }

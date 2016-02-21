@@ -13,6 +13,8 @@ namespace jcMSA.Posts.PCL.Handlers {
 
         public async Task<ReturnSet<List<PostListingResponseItem>>> GetMainListing() { return await GET<ReturnSet<List<PostListingResponseItem>>>(string.Empty, CacheItems.POSTS_MAINLISTING); }
 
-        public async Task<ReturnSet<PostResponseItem>> GetPost(int id) => await GET<ReturnSet<PostResponseItem>>($"id?={id}", CacheItems.POSTS_SINGLE);
+        public async Task<ReturnSet<PostResponseItem>> GetPost(int id) => await GET<ReturnSet<PostResponseItem>>($"id={id}", CacheItems.POSTS_SINGLE);
+
+        public async Task<ReturnSet<PostResponseItem>> GetPost(int year, int month, int day, string postname) => await GET<ReturnSet<PostResponseItem>>($"year={year}&month={month}&day={day}&postname={postname}", CacheItems.POSTS_SINGLE);
     }
 }

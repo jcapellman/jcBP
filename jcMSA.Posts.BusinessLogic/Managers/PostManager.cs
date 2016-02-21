@@ -24,5 +24,9 @@ namespace jcMSA.Posts.BusinessLogic.Managers {
                 });
             }
         }
+
+        public ReturnSet<PostResponseItem> GetPost(int year, int month, int day, string posturl) {
+            return new ReturnSet<PostResponseItem>(new PostResponseItem());
+        }
     }
 }
