@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Handlers\PostsHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transports\PostCreationRequestItem.cs" />
     <Compile Include="Transports\PostListingResponseItem.cs" />
     <Compile Include="Transports\PostResponseItem.cs" />
     <Compile Include="Transports\TagResponseItem.cs" />

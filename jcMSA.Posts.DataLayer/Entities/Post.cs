@@ -1,10 +1,8 @@
 namespace jcMSA.Posts.DataLayer.Entities {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-
-    public partial class Post {
+    
+    public class Post {
         public int ID { get; set; }
 
         public DateTimeOffset Modified { get; set; }
@@ -29,5 +27,9 @@ namespace jcMSA.Posts.DataLayer.Entities {
         [Required]
         [StringLength(255)]
         public string SafeURL { get; set; }
+
+        [Required]
+        [StringLength(255)]
+        public string Summary { get; set; }
     }
 }
