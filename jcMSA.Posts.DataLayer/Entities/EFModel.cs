@@ -6,6 +6,8 @@ namespace jcMSA.Posts.DataLayer.Entities {
 
         public virtual DbSet<Post> Posts { get; set; }
 
+        public virtual  DbSet<DGT_PostKeys> PostKeys { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder) {
             modelBuilder.Entity<Post>()
                 .Property(e => e.Title);

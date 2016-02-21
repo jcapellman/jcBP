@@ -26,7 +26,17 @@ namespace jcMSA.Posts.BusinessLogic.Managers {
         }
 
         public ReturnSet<PostResponseItem> GetPost(int year, int month, int day, string posturl) {
-            return new ReturnSet<PostResponseItem>(new PostResponseItem());
+            using (var eFactory = new EFModel()) {
+                var postKey = $"{year}_{month}_{day}_{posturl}";
+
+                var post = eFactory.PostKeys.FirstOrDefault(a => a.PostKey == postKey);
+
+                if (post == null) {
+                    throw new Exception($"Could not get Post {postKey}");
+                }
+
+                return GetPost(post.PostID);
+            }
         }
     }
 }
