@@ -13,5 +13,8 @@ namespace jcMSA.Posts.WebAPI.Controllers {
         public ReturnSet<List<PostListingResponseItem>> GET() {
             return new PostListingManager().GetPostListing();
         }
+
+        [HttpGet]
+        public ReturnSet<PostResponseItem> GET(int id) => new PostManager().GetPost(id); 
     }
 }
