@@ -145,6 +145,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\jcMSA.BaseContent.BusinessLogic\jcMSA.BaseContent.BusinessLogic.csproj">
+      <Project>{53954b92-45e2-4c1b-a125-055428673f37}</Project>
+      <Name>jcMSA.BaseContent.BusinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\jcMSA.BaseContent.PCL\jcMSA.BaseContent.PCL.csproj">
       <Project>{0219ed71-d85d-439f-bf14-35432fa37614}</Project>
       <Name>jcMSA.BaseContent.PCL</Name>
