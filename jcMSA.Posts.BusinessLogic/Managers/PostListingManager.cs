@@ -10,7 +10,7 @@ namespace jcMSA.Posts.BusinessLogic.Managers {
     public class PostListingManager {
         public ReturnSet<List<PostListingResponseItem>> GetPostListing() {
             using (var eFactory = new EFModel()) {
-                var postListing = eFactory.Database.SqlQuery<PostListingResponseItem>("POSTS_getPostListingSP");
+                var postListing = eFactory.Database.SqlQuery<PostListing>("POSTS_getPostListingSP");
 
                 if (postListing == null) {
                     throw new Exception("SP in getting posts returned null");
@@ -18,9 +18,9 @@ namespace jcMSA.Posts.BusinessLogic.Managers {
 
                 return new ReturnSet<List<PostListingResponseItem>>(postListing.Select(a => new PostListingResponseItem {
                     ID = a.ID,
-                    PostDate = a.PostDate,
+                    PostDate = a.Created,
                     Title = a.Title,
-                    URL = a.URL,
+                    URL = a.SafeURL,
                     Summary = a.Summary
                 }).ToList());
             }

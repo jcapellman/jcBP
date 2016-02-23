@@ -35,18 +35,18 @@ namespace jcMSA.Client.MVC.Controllers {
             ViewBag.Title = SiteConfig.SITE_NAME;
         }
 
-        private async void LoadData() {
-            var gcHandler = new GlobalContentHandler(SiteConfig.BASECONTENT_WEBAPI_ADDRESS, _webCache);
+        private void LoadData() {
+            //var gcHandler = new GlobalContentHandler(SiteConfig.BASECONTENT_WEBAPI_ADDRESS, _webCache);
 
-            var result = await gcHandler.GetGlobalContent();
+            //var result = await gcHandler.GetGlobalContent();
 
-            if (result.HasError) {           
-                return;
-            }
+            //if (result.HasError) {           
+            //    return;
+            //}
 
-            result.ReturnValue.TagCloud = processTagCloud(result.ReturnValue.TagCloud);
+            //result.ReturnValue.TagCloud = processTagCloud(result.ReturnValue.TagCloud);
 
-            ViewBag.GlobalContent = result.ReturnValue;
+            //ViewBag.GlobalContent = result.ReturnValue;
         }
     }
 }

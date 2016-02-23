@@ -31,45 +31,6 @@
                 @RenderBody()
             </div>
 
-            <div class="SideBar">
-                <div class="block">
-                    <h3 style="margin-left: 5px">Programming Blogs</h3>
-
-                    <div style="padding: 0 5px 5px 5px;">
-                        @foreach (var linkItem in @ViewBag.GlobalContent.Links) {
-                            <div class="ArchiveItem" style="font-size: 10px;">
-                                <a href="@linkItem.URL" target="_blank">@linkItem.DisplayText</a>
-                            </div>
-                        }
-                    </div>
-                </div>
-
-                <div class="block">
-                    <h3 style="margin-left: 5px">Archive</h3>
-
-                    <div style="padding: 0 5px 5px 5px;">
-                        @foreach (var item in @ViewBag.GlobalContent.ArchiveList) {
-                            var baseURL = @SiteConfig.SITE_URL + @item.Year + "/" + @item.Month + "/";
-
-                            <div class="ArchiveItem">
-                                <a href="@baseURL">@item.Month @item.Year (@item.PostCount)</a>
-                            </div>
-                        }
-                    </div>
-                </div>
-
-                <div class="TagsBar">
-                    <h3 style="margin-left: 5px">Tags</h3>
-                    <div class="Tags" style="padding: 0 5px 5px 5px;">
-                        @foreach (var tag in @ViewBag.GlobalContent.TagCloud) {
-                            var url = @SiteConfig.SITE_URL + "tag/" + @tag.SafeName + "/";
-
-                            <a href="@url" class="@tag.CSSClassName">@tag.DisplayName</a>
-                        }
-                    </div>
-                </div>
-            </div>
-
             <div style="clear:both;"></div>
             <footer>
                 <p>@SiteConfig.SITE_FOOTER</p>
