@@ -23,6 +23,34 @@ textarea {
     max-width: 280px;
 }
 
+.SubBar {
+    display: block;
+    /*height: 45px;*/
+}
+
+.SubBar h4, .SubBar h4 a:link {
+    float: left;
+    text-decoration: none;
+}
+
+.SubBar .seperator {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.post .Content h2, .post .Content h2 a:link {        
+    text-decoration: none;
+    margin: 10px 0 0px 0;
+    color: #000;
+}
+
+.post .Content h2 a:hover {
+    color: #479fbf;
+}
+
+.post .Content {
+    padding-bottom: 10px;
+}
 
 .actionButton {
     background: #aa33FF;
@@ -45,36 +73,9 @@ footer {
     margin-top: 10px;
 }
 
-.LeftBar {
-        float: left; width: 80%;
-}
-
 #ErrorContainer {
     color: #4e4e4e;    
 }
-
-.SideBar {
-    float: right;
-    width: 15%;
-    margin-top: 20px;
-    margin-left: 5%;
-}
-
-.SideBar .block, .SideBar .TagsBar {
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-@media all and (max-width:1280px)  {
-    .LeftBar {
-        width: 100%;
-    }
-
-    .SideBar {
-        display: none;
-    }
-}
-
 
 .TagsBar .Tags {
     

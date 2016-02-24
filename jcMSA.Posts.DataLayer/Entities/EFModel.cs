@@ -9,17 +9,7 @@ namespace jcMSA.Posts.DataLayer.Entities {
         public virtual  DbSet<DGT_PostKeys> DGTPostKeys { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder) {
-            modelBuilder.Entity<Post>()
-                .Property(e => e.Title);
 
-            modelBuilder.Entity<Post>()
-                .Property(e => e.PostContent);
-
-            modelBuilder.Entity<Post>()
-                .Property(e => e.URL);
-
-            modelBuilder.Entity<Post>()
-                .Property(e => e.SafeURL);
         }
     }
 }

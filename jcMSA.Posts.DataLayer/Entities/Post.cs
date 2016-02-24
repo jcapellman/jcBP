@@ -5,9 +5,9 @@ namespace jcMSA.Posts.DataLayer.Entities {
     public class Post {
         public int ID { get; set; }
 
-        public DateTimeOffset Modified { get; set; }
+        public DateTime Modified { get; set; }
 
-        public DateTimeOffset Created { get; set; }
+        public DateTime Created { get; set; }
 
         public bool Active { get; set; }
 
@@ -15,14 +15,10 @@ namespace jcMSA.Posts.DataLayer.Entities {
         [StringLength(255)]
         public string Title { get; set; }
 
-        public int AuthorUserID { get; set; }
+        public int PostedByUserID { get; set; }
 
         [Required]
-        public string PostContent { get; set; }
-
-        [Required]
-        [StringLength(255)]
-        public string URL { get; set; }
+        public string Body { get; set; }
 
         [Required]
         [StringLength(255)]

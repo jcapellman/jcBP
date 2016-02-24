@@ -15,7 +15,7 @@ namespace jcMSA.Posts.PCL.Handlers {
 
         public async Task<ReturnSet<PostResponseItem>> GetPost(int id) => await GET<ReturnSet<PostResponseItem>>($"id={id}", CacheItems.POSTS_SINGLE);
 
-        public async Task<ReturnSet<PostResponseItem>> GetPost(int year, int month, int day, string postname) => await GET<ReturnSet<PostResponseItem>>($"year={year}&month={month}&day={day}&postname={postname}", CacheItems.POSTS_SINGLE);
+        public async Task<ReturnSet<PostResponseItem>> GetPost(int year, int month, int day, string posturl) => await GET<ReturnSet<PostResponseItem>>($"year={year}&month={month}&day={day}&posturl={posturl}", CacheItems.POSTS_SINGLE);
 
         public async Task<ReturnSet<bool>> CreatePost(PostCreationRequestItem requestItem) => await PUT<PostCreationRequestItem, ReturnSet<bool>>(requestItem);
     }

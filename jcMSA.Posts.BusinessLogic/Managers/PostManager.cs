@@ -17,9 +17,9 @@ namespace jcMSA.Posts.BusinessLogic.Managers {
                 }
 
                 return new ReturnSet<PostResponseItem>(new PostResponseItem {
-                    Body = post.PostContent,
+                    Body = post.Body,
                     Title = post.Title,
-                    PostDate = post.Created.DateTime,
+                    PostDate = post.Created,
                     Tags = new List<TagResponseItem>()
                 });
             }
@@ -27,7 +27,7 @@ namespace jcMSA.Posts.BusinessLogic.Managers {
 
         public ReturnSet<PostResponseItem> GetPost(int year, int month, int day, string posturl) {
             using (var eFactory = new EFModel()) {
-                var postKey = $"{year}_{month}_{day}_{posturl}";
+                var postKey = $"{year}/{month}/{day}/{posturl}";
 
                 var post = eFactory.DGTPostKeys.FirstOrDefault(a => a.PostKey == postKey);
 
@@ -44,9 +44,9 @@ namespace jcMSA.Posts.BusinessLogic.Managers {
                 var post = eFactory.Posts.Create();
 
                 post.Active = true;
-                post.Created = DateTimeOffset.Now;
-                post.Modified = DateTimeOffset.Now;
-                post.PostContent = requestItem.Body;
+                post.Created = DateTime.Now;
+                post.Modified = DateTime.Now;
+                post.Body = requestItem.Body;
                 post.Summary = requestItem.Body.Length > 255 ? requestItem.Body.Substring(0, 252) + "..." : requestItem.Body;
                 post.Title = requestItem.Title;
                 post.SafeURL = requestItem.Title.Replace(" ", "-");

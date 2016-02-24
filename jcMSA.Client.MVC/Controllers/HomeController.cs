@@ -20,6 +20,7 @@ namespace jcMSA.Client.MVC.Controllers {
             return View(result.ReturnValue);
         }
 
+        [Route("{year}/{month}/{day}/{postname}")]
         public async Task<ActionResult> SinglePost(int year, int month, int day, string postname) {
             var postHandler = new PostsHandler(SiteConfig.POSTS_WEBAPI_ADDRESS, _webCache);
 
