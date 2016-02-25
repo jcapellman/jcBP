@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Managers\ContentPostManager.cs" />
     <Compile Include="Managers\PostListingManager.cs" />
     <Compile Include="Managers\PostManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

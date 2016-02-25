@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Content.cs" />
     <Compile Include="Entities\DGT_PostKeys.cs" />
     <Compile Include="Entities\EFModel.cs" />
     <Compile Include="Entities\Post.cs" />

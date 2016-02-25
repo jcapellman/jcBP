@@ -32,5 +32,18 @@ namespace jcMSA.Client.MVC.Controllers {
 
             return View(result.ReturnValue);
         }
+
+        [Route("{postname}")]
+        public async Task<ActionResult> ContentPost(string postname) {
+            var postHandler = new ContentPostHandler(SiteConfig.POSTS_WEBAPI_ADDRESS, _webCache);
+
+            var result = await postHandler.GetContentPost(postname);
+
+            if (!result.HasValue) {
+                throw new jcBPWebException(result.Exception, result.ErrorCode);
+            }
+
+            return View(result.ReturnValue);
+        }
     }
 }
