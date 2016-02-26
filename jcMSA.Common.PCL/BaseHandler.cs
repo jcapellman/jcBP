@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Net.Http;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -69,7 +68,7 @@ namespace jcMSA.Common.PCL {
 
         public async Task<T> GET<T>(string urlArguments, CacheItems cacheItem) {
             if (_cacheInterface.Exists(cacheItem)) {
-                return _cacheInterface.Get<T>(cacheItem).ReturnValue;
+                return _cacheInterface.Get<T>(cacheItem, urlArguments).ReturnValue;
             }
 
             try {
@@ -77,7 +76,7 @@ namespace jcMSA.Common.PCL {
                 
                 var result = JsonConvert.DeserializeObject<T>(str);
 
-                _cacheInterface.Add(cacheItem, result);
+                _cacheInterface.Add(cacheItem, result, urlArguments);
 
                 return result;
             } catch (Exception ex) {
