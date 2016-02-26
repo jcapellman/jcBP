@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace jcMSA.Posts.DataLayer.Entities {
-    public class Content {
+    public class ContentPosts {
         public int ID { get; set; }
 
         public DateTime Modified { get; set; }

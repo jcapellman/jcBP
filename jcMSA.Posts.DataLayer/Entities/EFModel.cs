@@ -8,7 +8,7 @@ namespace jcMSA.Posts.DataLayer.Entities {
 
         public virtual  DbSet<DGT_PostKeys> DGTPostKeys { get; set; }
 
-        public virtual DbSet<Content> ContentPosts { get; set; }
+        public virtual DbSet<ContentPosts> ContentPosts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder) {
 
