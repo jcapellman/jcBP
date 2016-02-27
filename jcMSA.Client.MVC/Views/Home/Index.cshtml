@@ -1,4 +1,5 @@
-﻿@model List<jcMSA.Posts.PCL.Transports.PostListingResponseItem>
+﻿@using jcMSA.Client.MVC.Helpers
+@model List<jcMSA.Posts.PCL.Transports.PostListingResponseItem>
 
 @foreach (var post in Model) {
     @Html.Partial("PartialPost", post)

@@ -11,7 +11,11 @@ namespace jcMSA.Posts.PCL.Handlers {
     public class PostsHandler : BaseHandler {
         public PostsHandler(string webAPIURL, IBaseCachePa cacheInterface) : base(webAPIURL, "Posts", cacheInterface) { }
 
-        public async Task<ReturnSet<List<PostListingResponseItem>>> GetMainListing() { return await GET<ReturnSet<List<PostListingResponseItem>>>(string.Empty, CacheItems.POSTS_MAINLISTING); }
+        public async Task<ReturnSet<List<PostListingResponseItem>>> GetMainListing(int pageSize, int? pageNumber = null) {
+            var queryString = $"pageSize={pageSize}" + (pageNumber.HasValue ? $"&pageNumber={pageNumber.Value}" : string.Empty);
+
+            return await GET<ReturnSet<List<PostListingResponseItem>>>(queryString, CacheItems.POSTS_MAINLISTING);
+        }
 
         public async Task<ReturnSet<PostResponseItem>> GetPost(int id) => await GET<ReturnSet<PostResponseItem>>($"id={id}", CacheItems.POSTS_SINGLE);
 

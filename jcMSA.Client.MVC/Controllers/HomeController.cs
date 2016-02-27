@@ -8,10 +8,10 @@ using jcMSA.Posts.PCL.Handlers;
 namespace jcMSA.Client.MVC.Controllers {
     [CustomError]
     public class HomeController : BaseController {
-        public async Task<ActionResult> Index() {
+        public async Task<ActionResult> Index(int? pageNumber = null) {
             var postHandler = new PostsHandler(SiteConfig.POSTS_WEBAPI_ADDRESS, _webCache);
 
-            var result = await postHandler.GetMainListing();
+            var result = await postHandler.GetMainListing(SiteConfig.SITE_POST_PAGE_SIZE, pageNumber);
 
             if (!result.HasValue) {
                 throw new jcBPWebException(result.Exception, result.ErrorCode);
