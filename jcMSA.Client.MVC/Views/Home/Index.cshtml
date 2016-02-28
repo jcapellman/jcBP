@@ -1,6 +1,32 @@
 ﻿@using jcMSA.Client.MVC.Helpers
 @model List<jcMSA.Posts.PCL.Transports.PostListingResponseItem>
 
-@foreach (var post in Model) {
-    @Html.Partial("PartialPost", post)
-}
+<div id="postListing">
+    @foreach (var post in Model) {
+        @Html.Partial("PartialPost", post)
+    }
+</div>
+
+<script type="text/javascript">
+    var pageNumber = 1;
+
+    function loadPostContent() {
+        $.ajax({
+            url: '@Url.Content("~/Home/Index")',
+            type: 'get',
+            data: { pageNumber: pageNumber },
+            datatype: 'json',
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                $('#postListing').append(data);
+            }
+        });
+    }
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+            loadPostContent(pageNumber);
+            pageNumber++;
+        }
+    });
+</script>
