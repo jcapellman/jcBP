@@ -10,12 +10,12 @@ namespace jcMSA.Posts.WebAPI.Controllers {
     [Route("api/[controller]")]
     public class PostsController : BaseController {
         [HttpGet]
-        public ReturnSet<List<PostListingResponseItem>> GET(int pageSize, int? pageNumber = null) => new PostListingManager().GetPostListing(pageSize, pageNumber);        
+        public ReturnSet<List<PostListingResponseItem>> GET(int pageSize, int? pageNumber = null) => new PostListingManager(APIWrapper).GetPostListing(pageSize, pageNumber);        
         
         [HttpGet]
-        public ReturnSet<PostResponseItem> GET(int year, int month, int day, string posturl) => new PostManager().GetPost(year, month, day, posturl);
+        public ReturnSet<PostResponseItem> GET(int year, int month, int day, string posturl) => new PostManager(APIWrapper).GetPost(year, month, day, posturl);
 
         [HttpPut]
-        public ReturnSet<bool> PUT(PostCreationRequestItem requestItem) => new PostManager().AddPost(requestItem);
+        public ReturnSet<bool> PUT(PostCreationRequestItem requestItem) => new PostManager(APIWrapper).AddPost(requestItem);
     }
 }

@@ -78,6 +78,10 @@
       <Project>{c2bd1b62-e924-4187-a4f3-2089ae74e5ae}</Project>
       <Name>jcMSA.Common.PCL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\jcMSA.Common.WebAPI\jcMSA.Common.WebAPI.csproj">
+      <Project>{2FCBAC01-CEA0-45A6-B800-84BC3359AFF9}</Project>
+      <Name>jcMSA.Common.WebAPI</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

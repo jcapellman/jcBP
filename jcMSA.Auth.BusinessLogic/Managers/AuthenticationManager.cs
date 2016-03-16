@@ -5,6 +5,7 @@ using jcMSA.Auth.DataLayer.Entities;
 using jcMSA.Auth.PCL.Transports;
 using jcMSA.Common.PCL.Enums;
 using jcMSA.Common.PCL.Transports.Container;
+using jcMSA.Common.PCL.Transports.Internal;
 using jcMSA.Common.WebAPI;
 
 namespace jcMSA.Auth.BusinessLogic.Managers {
@@ -22,5 +23,7 @@ namespace jcMSA.Auth.BusinessLogic.Managers {
                 return new ReturnSet<AuthenticationResponseItem>(new AuthenticationResponseItem());
             }
         }
+
+        public AuthenticationManager(APIRequestWrapper requestWrapper) : base(requestWrapper) { }
     }
 }

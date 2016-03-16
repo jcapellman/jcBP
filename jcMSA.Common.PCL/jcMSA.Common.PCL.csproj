@@ -50,6 +50,7 @@
     <Compile Include="Transports\Common\BaseResponse.cs" />
     <Compile Include="Transports\Common\BaseTransport.cs" />
     <Compile Include="Transports\Container\ReturnSet.cs" />
+    <Compile Include="Transports\Internal\APIRequestWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

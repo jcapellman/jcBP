@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using jcMSA.BaseContent.BusinessLogic.Managers;
 using jcMSA.BaseContent.PCL.Transports;
 using jcMSA.Common.PCL.Transports.Container;
@@ -11,7 +10,7 @@ namespace jcMSA.BaseContent.WebAPI.Controllers {
         public ReturnSet<GlobalContentResponseItem> GET() {
             var globalContent = new GlobalContentResponseItem();
 
-            var linkResult = new LinkManager().GetLinks();
+            var linkResult = new LinkManager(APIWrapper).GetLinks();
 
             if (linkResult.HasError) {
                 throw new Exception(linkResult.Exception);

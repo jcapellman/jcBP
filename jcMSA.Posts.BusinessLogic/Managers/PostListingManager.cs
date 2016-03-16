@@ -4,11 +4,13 @@ using System.Data.SqlClient;
 using System.Linq;
 
 using jcMSA.Common.PCL.Transports.Container;
+using jcMSA.Common.PCL.Transports.Internal;
+using jcMSA.Common.WebAPI;
 using jcMSA.Posts.DataLayer.Entities;
 using jcMSA.Posts.PCL.Transports;
 
 namespace jcMSA.Posts.BusinessLogic.Managers {
-    public class PostListingManager {
+    public class PostListingManager : BaseManager {
         public ReturnSet<List<PostListingResponseItem>> GetPostListing(int pageSize, int? pageNumber = null) {
             using (var eFactory = new EFModel()) {
                 var postListing = eFactory.Database.SqlQuery<PostListing>("POSTS_getPostListingSP @pageSize, @pageNumber", new SqlParameter("@pageSize", pageSize), new SqlParameter("@pageNumber", pageNumber.HasValue ? pageNumber.ToString() : ""));
@@ -26,5 +28,7 @@ namespace jcMSA.Posts.BusinessLogic.Managers {
                 }).ToList());
             }
         }
+
+        public PostListingManager(APIRequestWrapper requestWrapper) : base(requestWrapper) { }
     }
 }

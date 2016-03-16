@@ -8,7 +8,7 @@ using jcMSA.Common.WebAPI;
 namespace jcMSA.Auth.WebAPI.Controllers {
     public class AuthenticateController : BaseController {
         public async Task<ReturnSet<AuthenticationResponseItem>> GET(AuthenticationRequestItem requestItem) {
-            return await new AuthenticationManager().AttemptLogin(requestItem);
+            return await new AuthenticationManager(APIWrapper).AttemptLogin(requestItem);
         }
     }
 }

@@ -1,3 +1,5 @@
 bin
 obj
 .vs
+/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1
+/jcMSA.BaseContent.WebAPI/jcMSA.BaseContent.WebAPI.csproj.user

@@ -71,6 +71,10 @@
       <Project>{c2bd1b62-e924-4187-a4f3-2089ae74e5ae}</Project>
       <Name>jcMSA.Common.PCL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\jcMSA.Common.WebAPI\jcMSA.Common.WebAPI.csproj">
+      <Project>{2FCBAC01-CEA0-45A6-B800-84BC3359AFF9}</Project>
+      <Name>jcMSA.Common.WebAPI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\jcMSA.Posts.DataLayer\jcMSA.Posts.DataLayer.csproj">
       <Project>{a088ff84-3dbe-493e-bda2-68066616ec40}</Project>
       <Name>jcMSA.Posts.DataLayer</Name>

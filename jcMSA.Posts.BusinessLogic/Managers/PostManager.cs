@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 
 using jcMSA.Common.PCL.Transports.Container;
+using jcMSA.Common.PCL.Transports.Internal;
+using jcMSA.Common.WebAPI;
 using jcMSA.Posts.DataLayer.Entities;
 using jcMSA.Posts.PCL.Transports;
 
 namespace jcMSA.Posts.BusinessLogic.Managers {
-    public class PostManager {
+    public class PostManager : BaseManager {
         public ReturnSet<PostResponseItem> GetPost(int id) {
             using (var eFactory = new EFModel()) {
                 var post = eFactory.Posts.FirstOrDefault(a => a.ID == id);
@@ -65,5 +67,7 @@ namespace jcMSA.Posts.BusinessLogic.Managers {
                 return new ReturnSet<bool>(true);
             }
         }
+
+        public PostManager(APIRequestWrapper requestWrapper) : base(requestWrapper) { }
     }
 }
